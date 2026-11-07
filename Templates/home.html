@@ -1,15 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management System</title>
+    <title>City Hospital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fa;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #0b5ed7;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero section */
+        .hero {
+            background-color: #0b5ed7;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero a {
+            background-color: white;
+            color: #0b5ed7;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Services */
+        .services {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        /* .card  :hover{
+
+             box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1)  ; 
+            background-color: #6297e7;
+            
+        }*/
+
+        .card h3 {
+            color: #0b5ed7;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        span p{
+
+            color: #f2f6fa;
+            size: 0.1px;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>WELCOME TO CITY HOSPITAL RAWALPINDI</h1>
-    <p>Welcome to our hospital management system!</p>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">City Hospital</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Appointment</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Vacancies</a></li>
+            <li><a href="#">Blood</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </div>
 
-   
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Welcome to City Hospital</h1>
+        <p>Book appointments, get test reports and find blood donors online.</p>
+        <span><p>We care of your health</p></span>
+        <a href="#">Book Appointment</a>
+    </div>
+
+    <!-- Services -->
+    <div class="services">
+        <div class="card">
+            <h3>Online Appointment</h3>
+            <p>Book your doctor visit from home.</p>
+        </div>
+        <div class="card">
+            <h3>Test Reports</h3>
+            <p>Download your lab reports online.</p>
+        </div>
+        <div class="card">
+            <h3>Blood Donation</h3>
+            <p>Donate blood or request it in an emergency.</p>
+        </div>
+        <div class="card">
+            <h3>Vacancies</h3>
+            <p>See the latest jobs at our hospital.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2026 City Hospital. All rights reserved.</p>
+    </div>
+
 </body>
 </html>
