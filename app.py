@@ -33,6 +33,15 @@ def add_patient():
 def appointments(): 
      return render_template("Appointment.html")
 
+
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()

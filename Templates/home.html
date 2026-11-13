@@ -129,12 +129,12 @@
         <div class="logo">City Hospital</div>
         
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('appointments') }}">Appointment</a></li>
             <li><a href="#">Reports</a></li>
             <li><a href="#">Vacancies</a></li>
             <li><a href="#">Blood</a></li>
-            <li><a href="Templates/login.html">Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
         </ul>
     </div>
 
