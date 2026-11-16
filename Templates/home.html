@@ -143,12 +143,12 @@
         <h1>Welcome to City Hospital</h1>
         <p>Book appointments, get test reports and find blood donors online.</p>
         <span><p>We care of your health</p></span>
-        <a href="/Templates/Appointment.html">Book Appointment</a>
+        <a href="{{ url_for('appointments') }}">Book Appointment</a>
     </div>
 
     <!-- Services -->
     <div class="services">
-        <div class="card">
+        <div class="card" onclick="{{ url_for('home') }}">
             <h3>Online Appointment</h3>
             <p>Book your doctor visit from home.</p>
         </div>
@@ -163,6 +163,10 @@
         <div class="card">
             <h3>Vacancies</h3>
             <p>See the latest jobs at our hospital.</p>
+        </div>
+        <div class="card">
+            <h3>Login</h3>
+            <p>Login to the site and get our services</p>
         </div>
     </div>
 
