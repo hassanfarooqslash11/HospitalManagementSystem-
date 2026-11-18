@@ -12,9 +12,9 @@ h2 { text-align: center; color: #142D4E; }
 h3 { font-size: 32px; text-align: center; font-family: Georgia, serif; color: #008C95; }
 button { display: block; width: 100%; padding: 12px; margin: 10px 0; font-size: 17px; font-weight: bold; background: #142D4E; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; }
 button:hover { background: #008C95; transform: scale(1.04); }
-input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+input, select { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
 .backbtn { background: #888; }
-#patientForm, #staffForm , #Userregister { display: none; }
+#patientForm, #staffForm, #patientRegister, #staffRegister { display: none; }
 </style>
 </head>
 <body>
@@ -34,12 +34,9 @@ input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; borde
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
-     
-
     </form>
+    <button type="button" onclick="show('patientRegister')">Don't have an account? Sign Up</button>
     <button type="button" class="backbtn" onclick="show('roleBox')">Back</button>
-     <a href="#Userregister">Don't have an account?</a> 
-      <button onclick="show('Userregister')"> signUp </button>
   </div>
 
   <div id="staffForm">
@@ -49,38 +46,54 @@ input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; borde
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
+    <button type="button" onclick="show('staffRegister')">New staff? Register</button>
     <button type="button" class="backbtn" onclick="show('roleBox')">Back</button>
   </div>
 
-  
-  <div id="Userregister">
-
-    <h1>Registeration</h1>
-
-    <form action="/User_register" method="POST">
-
-        <input type="text" name="username" placeholder="Enter your name" required>
-        <input type="email" name="Email" placeholder="Enter your email" required>
-        <input type="text" name="Password" placeholder="Password" required >
-        <input type="text" name="ConfirmPassword" placeholder="Confirm Password" show="none">
-      
-        <button>Register</button>
-
+  <div id="patientRegister">
+    <h2>Registration</h2>
+    <form action="/patient_register" method="POST" onsubmit="return checkPass(this)">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone No" required>
+      <select name="blood_group" required>
+        <option value="">Blood group</option>
+        <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+      </select>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
     </form>
-
+    <button type="button" class="backbtn" onclick="show('patientForm')">Back to login</button>
   </div>
 
+  <div id="staffRegister">
+    <h2>Registration</h2>
+    <form action="/staff_register" method="POST" onsubmit="return checkPass(this)">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
+    </form>
+    <button type="button" class="backbtn" onclick="show('staffForm')">Back to login</button>
+  </div>
 
 </div>
-
 <script>
 function show(id) {
-  ['roleBox', 'patientForm', 'staffForm' , 'Userregister'].forEach(function (x) {
+  ['roleBox', 'patientForm', 'staffForm', 'patientRegister', 'staffRegister'].forEach(function (x) {
     document.getElementById(x).style.display = (x === id) ? 'block' : 'none';
   });
 }
-
-// document.getElementById("Userregister").style.display = ("Userregister") ? 'block' : 'none';
+function checkPass(f) {
+  if (f.password.value !== f.confirm_password.value) {
+    alert('Passwords match nahi karte');
+    return false;
+  }
+  return true;
+}
 </script>
 </body>
 </html>

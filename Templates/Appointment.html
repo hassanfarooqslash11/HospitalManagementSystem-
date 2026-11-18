@@ -1,21 +1,69 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Hospital Appointment</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background-color: azure; font-family: Arial, sans-serif; }
 
-    <meta charset="UTF-8">
+.topheader { background: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+.topheader span { font-weight: bold; color: #0b5ed7; font-size: 20px; }
+.topheader a { text-decoration: none; color: #0b5ed7; font-weight: 500; }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.firstpart { max-width: 500px; margin: 30px auto 20px; background: #0b5ed7; color: white; text-align: center; padding: 20px; border-radius: 20px; }
 
-    <title>City Hospital Appointment</title>
-
+.patientdetails { max-width: 500px; margin: 0 auto 30px; background: antiquewhite; padding: 20px; border-radius: 20px; border: 2px solid lightblue; }
+.patientdetails h2 { color: cornflowerblue; margin-top: 0; }
+.patientdetails label { display: block; font-weight: 600; margin-top: 10px; }
+.patientdetails input, .patientdetails select { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 8px; background: white; }
+.patientdetails button { width: 100%; margin-top: 20px; padding: 12px; border: none; border-radius: 10px; background: lime; font-weight: bold; font-size: 16px; cursor: pointer; }
+</style>
 </head>
-
 <body>
 
-    <h1>Book your appoinments now</h1>    
+<div class="topheader">
+    <span>City Hospital</span>
+    <a href="{{ url_for('home') }}">Back To Home</a>
+</div>
+
+<div class="firstpart">
+    <h2>Book an appointment</h2>
+    <p>Book, visit and be checked up</p>
+</div>
+
+<div class="patientdetails">
+    <h2>Patient Details</h2>
+    <form action="/appointments" method="POST">
+
+        <label for="pname">Name</label>
+        <input type="text" id="pname" name="pname" placeholder="Enter patient name" required>
+
+        <label for="page">Age</label>
+        <input type="number" id="page" name="page" min="0" max="120" placeholder="e.g. 20, 25" required>
+
+        <label for="pcity">City</label>
+        <input type="text" id="pcity" name="pcity" placeholder="City of patient" required>
+
+        <label for="pphone">Phone No</label>
+        <input type="tel" id="pphone" name="pphone" placeholder="Enter contact no" required>
+
+        <label for="pblood">Blood Group</label>
+        <input type="text" id="pblood" name="pblood" placeholder="If known, e.g. A+">
+
+        <label for="pdoctor">Doctor</label>
+        <select id="pdoctor" name="pdoctor" required>
+            <option value="">Select specialist</option>
+            <option>Cardiologist</option>
+            <option>Gynaecologist</option>
+            <option>Child Specialist</option>
+        </select>
+
+        
+        <button type="submit">Request Appointment</button>
+    </form>
+</div>
 
 </body>
-
 </html>
