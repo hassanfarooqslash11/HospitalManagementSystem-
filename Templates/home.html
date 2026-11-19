@@ -33,6 +33,34 @@ body { font-family: Arial, sans-serif; background-color: #f2f6fa; color: #333; }
 .lfsection a { color: white; text-decoration: none; }
 .copyright { text-align: center; margin-top: 25px; padding-top: 15px; border-top: 1px solid #444; }
 .logo button{width: 15%;}
+.departments h1{
+    margin-left: 20px;
+}
+.departments .dep1{ width: 30%;float: left ;background-color: #0b5ed7; margin-left: 15px;border-radius: 20px; height: 100px;} 
+.departments .dep1 h3 , p{
+    margin-left: 15px;
+}
+.vacancies{
+
+    background-color: #222;
+    color: aliceblue;
+    width: 40%;
+    border-radius: 21px;
+    margin-top: 20px;
+    height: 100px;
+    margin-left: 20px;
+
+}
+.vacancies a h2{
+
+    margin: 20px;
+    margin-top: 30px;
+    font-style: none;
+     text-decoration: none;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+   
+}
 </style>
 </head>
 <body>
@@ -42,8 +70,8 @@ body { font-family: Arial, sans-serif; background-color: #f2f6fa; color: #333; }
     <ul>
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('appointments') }}">Appointment</a></li>
-        <li><a href="#">Reports</a></li>
-        <li><a href="#">Vacancies</a></li>
+        <li><a href="{{ url_for('Reports') }}">Reports</a></li>
+        <!-- <li><a href="#">Vacancies</a></li> -->
         <li><a href="#">Blood</a></li>
         <li><a href="{{ url_for('login') }}">Login</a></li>
     </ul>
@@ -78,6 +106,27 @@ body { font-family: Arial, sans-serif; background-color: #f2f6fa; color: #333; }
         <p>Login to the site and get our services</p>
     </div>
 </div>
+<div class="departments">
+    <h1>Our departments</h1>
+    <div class="dep1"><br>
+        <h3>Medical</h3>
+        <p>Visit us for your medical examination and medical check up's</p>
+    </div>
+    <div class="dep1">
+        <h3 style="margin-top: 14px;">Medicines</h3>
+        <p>World best medicine available for patient to facilitate them </p>
+    </div>
+    <div class="dep1">
+        <h3 style="margin-top: 15px;">Emergency</h3>
+        <p>24/7 emergency service available for everyone </p>
+    </div>
+</div>
+<br><br><br><br><br>
+<div class="vacancies">
+    <a href="" style="text-decoration: none; color: white;"><h2 style=" text-decoration: none;margin-top: 10px">Vacancies</h2></a>
+    <p>See latest vacancies available at our hospital </p>
+</div>
+<br><br><br>
 
 <div class="footer">
     <div class="footer-sections">
